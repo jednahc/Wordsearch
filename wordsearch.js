@@ -19,7 +19,7 @@ const words = ["zzzzzzz", "zzzzz"];
 const gameObj = {
   row: 5,
   col: 5,
-  wid: 25,
+  wid: 100,
   x: "",
   y: "",
   arr: [],
@@ -29,8 +29,11 @@ const gameObj = {
 
 const game = () => {
   elements.gameSpace = document.querySelector(".gameSpace");
-  elements.gameSpace.style.width = (gameObj.col *gameObj.wid + 50) + 'px';
   elements.grid = document.createElement("div");
+  // elements.grid.style.width = (gameObj.col * gameObj.wid + 50) + 'px'; 
+  // elements.gameSpace.style.width = (gameObj.col * gameObj.wid + 50) + "px";
+  // elements.grid = document.createElement("div");
+  elements.grid.style.margin = 'auto';
   elements.message = document.createElement("div");
   elements.grid.classList.add("grid");
   elements.list = document.createElement("div");
@@ -62,6 +65,7 @@ const startGame = () => {
   elements.start.style.display = "none";
   gameObj.row = Number(elements.gridSize.value); //rows
   gameObj.col = Number(elements.gridSize.value); //columns
+  elements.grid.style.width = gameObj.col * gameObj.wid + 50 + "px";
   gameObj.x = "";
   gameObj.y = "";
   gameObj.bArray.length = 0;
@@ -254,5 +258,5 @@ const winner = () => {
     elements.start.innerHTML = "Play again";
   }
 };
-document.addEventListener("DOMContentLoaded", game);
 
+document.addEventListener("DOMContentLoaded", game);
