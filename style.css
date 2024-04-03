@@ -1,16 +1,17 @@
-/* .gameSpace {
+.gameSpace {
     text-align: center;
     margin: auto;
-} */
+}
 
 .grid-item {
     border: 1px solid black;
     padding: 20px;
-    font-size: 22px;
+    font-size: 2em;
     text-align: center;
-    cursor:grab;
+    cursor: grab;
+    
 }
-/* .grid-item:hover{
+.grid-item:hover{
     background-color: lightsteelblue;
 }
 
@@ -18,18 +19,17 @@ button{
     padding:10px;
     text-align: center;
     color:white;
-    background-color: red;
-    font-size: 2em;
+    background-color: green;
+    font-size: 22px;
 }
-.myList, input[type="number"]{
+.list, input[type="number"]{
     text-align: center;
-    font-size: 2em;
+    font-size: 22px;
 }
 input[type="number"]{
-    width:50px;
-} */
+    width:80px;
+    font-size: 50px;
+} 
 .grid{
     display: grid;
-    /* grid-template-columns: auto auto auto auto auto;
-    grid-template-rows: auto auto auto auto auto; */
 }
