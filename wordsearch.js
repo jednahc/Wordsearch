@@ -1,25 +1,25 @@
 const elements = {};
-const words = ["zzzzzzz", "zzzzz"];
-// const words = [
-//   "dog",
-//   "buffalo",
-//   "cat",
-//   "pig",
-//   "cow",
-//   "mouse",
-//   "horse",
-//   "chicken",
-//   "cattle",
-//   "goose",
-//   "llama",
-//   "sheep",
-//   "mule",
-//   "turkey",
-// ];
+
+const words = [
+  "dog",
+  "buffalo",
+  "cat",
+  "pig",
+  "cow",
+  "mouse",
+  "horse",
+  "chicken",
+  "cattle",
+  "goose",
+  "llama",
+  "sheep",
+  "mule",
+  "turkey",
+];
 const gameObj = {
   row: 5,
   col: 5,
-  wid: 100,
+  wid: 80,
   x: "",
   y: "",
   arr: [],
@@ -30,9 +30,6 @@ const gameObj = {
 const game = () => {
   elements.gameSpace = document.querySelector(".gameSpace");
   elements.grid = document.createElement("div");
-  // elements.grid.style.width = (gameObj.col * gameObj.wid + 50) + 'px'; 
-  // elements.gameSpace.style.width = (gameObj.col * gameObj.wid + 50) + "px";
-  // elements.grid = document.createElement("div");
   elements.grid.style.margin = 'auto';
   elements.message = document.createElement("div");
   elements.grid.classList.add("grid");
@@ -65,7 +62,6 @@ const startGame = () => {
   elements.start.style.display = "none";
   gameObj.row = Number(elements.gridSize.value); //rows
   gameObj.col = Number(elements.gridSize.value); //columns
-  elements.grid.style.width = gameObj.col * gameObj.wid + 50 + "px";
   gameObj.x = "";
   gameObj.y = "";
   gameObj.bArray.length = 0;
@@ -131,7 +127,7 @@ const placeWord = (word) => {
   let placed = false;
   let count = 300;
   word = Math.random() > 0.5 ? word : word.split("").reverse().join("");
-  //   console.log(word);
+
   while (!placed && count > 0) {
     count--;
     let position = { cols: 0, rows: 0 };
@@ -250,7 +246,7 @@ const winner = () => {
       counter++;
     }
   });
-  log(gameObj.placedWords.length - counter + "Words left");
+  log(gameObj.placedWords.length - counter + " Words left");
   if (gameObj.placedWords.length - counter == 0 || gameObj.placedWords.length == 0) {
     log("Completed");
     elements.gridSize.style.display = "inline-block";
